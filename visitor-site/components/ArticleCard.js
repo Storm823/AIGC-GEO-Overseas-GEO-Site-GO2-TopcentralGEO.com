@@ -1,18 +1,18 @@
 import Link from 'next/link';
 
 /**
- * ArticleCard — 文章卡片组件
- * 用于文章列表页，展示文章摘要信息
+ * ArticleCard — Article card component
+ * Used on articles list page to display article summary
  *
  * @param {Object} article
- * @param {string} article.slug - 文章标识
- * @param {string} article.title - 标题
- * @param {string} article.excerpt - 摘要
- * @param {string} article.category - 分类
- * @param {string[]} article.tags - 标签列表
- * @param {string} article.date - 日期
- * @param {string} article.tier - 档位 (free/basic/premium/enterprise)
- * @param {boolean} article.aigcIncluded - 是否被AIGC收录
+ * @param {string} article.slug - Article URL slug
+ * @param {string} article.title - Article title
+ * @param {string} article.excerpt - Article excerpt/summary
+ * @param {string} article.category - Article category
+ * @param {string[]} article.tags - Tag list
+ * @param {string} article.date - Publication date
+ * @param {string} article.tier - Content tier (free/basic/premium/enterprise)
+ * @param {boolean} article.aigcIncluded - Whether AIGC-indexed
  */
 export default function ArticleCard({ article }) {
   const {
@@ -26,12 +26,12 @@ export default function ArticleCard({ article }) {
     aigcIncluded = false,
   } = article;
 
-  // 档位配置
+  // Tier configuration
   const tierConfig = {
-    free: { label: '免费', color: 'var(--accent-green)' },
-    basic: { label: '基础', color: 'var(--accent-blue-light)' },
-    premium: { label: '高级', color: 'var(--accent-amber)' },
-    enterprise: { label: '企业', color: 'var(--accent-red)' },
+    free: { label: 'Free', color: 'var(--accent-green)' },
+    basic: { label: 'Basic', color: 'var(--accent-blue-light)' },
+    premium: { label: 'Premium', color: 'var(--accent-amber)' },
+    enterprise: { label: 'Enterprise', color: 'var(--accent-red)' },
   };
 
   const tierInfo = tierConfig[tier] || tierConfig.free;
@@ -52,7 +52,7 @@ export default function ArticleCard({ article }) {
           overflow: 'hidden',
         }}
       >
-        {/* AIGC收录标记 */}
+        {/* AIGC Indexed badge */}
         {aigcIncluded && (
           <div
             style={{
@@ -68,7 +68,7 @@ export default function ArticleCard({ article }) {
               letterSpacing: '0.5px',
             }}
           >
-            AI收录
+            AI Indexed
           </div>
         )}
 

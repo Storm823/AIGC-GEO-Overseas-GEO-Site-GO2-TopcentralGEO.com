@@ -1,14 +1,14 @@
 import Link from 'next/link';
 
 /**
- * KeywordCloud — 关键词云组件
- * 展示AIGC收录词和AI采纳词，支持两种模式
+ * KeywordCloud — Keyword cloud component
+ * Displays AIGC-indexed and AI-adopted keywords, supports cloud/list modes
  *
- * @param {Object[]} keywords - 关键词列表
- * @param {string} keywords[].name - 关键词名称
- * @param {number} keywords[].count - 出现频次
- * @param {string} keywords[].type - 类型 ('aigc' | 'ai')
- * @param {string} mode - 展示模式 ('cloud' | 'list')
+ * @param {Object[]} keywords - Keyword list
+ * @param {string} keywords[].name - Keyword name
+ * @param {number} keywords[].count - Occurrence frequency
+ * @param {string} keywords[].type - Type ('aigc' | 'ai')
+ * @param {string} mode - Display mode ('cloud' | 'list')
  */
 export default function KeywordCloud({ keywords = [], mode = 'cloud' }) {
   if (!keywords.length) {
@@ -20,14 +20,14 @@ export default function KeywordCloud({ keywords = [], mode = 'cloud' }) {
           color: 'var(--text-muted)',
         }}
       >
-        暂无关键词数据
+        No keywords data available
       </div>
     );
   }
 
   const maxCount = Math.max(...keywords.map((k) => k.count || 1));
 
-  // 计算字体大小 (cloud模式)
+  // Calculate font size (cloud mode)
   const getFontSize = (count) => {
     const minSize = 0.75;
     const maxSize = 2.0;
@@ -35,7 +35,7 @@ export default function KeywordCloud({ keywords = [], mode = 'cloud' }) {
     return minSize + ratio * (maxSize - minSize);
   };
 
-  // 根据类型获取颜色
+  // Get color by type
   const getColor = (type) => {
     if (type === 'aigc') return 'var(--accent-cyan)';
     if (type === 'ai') return 'var(--accent-blue-light)';
@@ -43,7 +43,7 @@ export default function KeywordCloud({ keywords = [], mode = 'cloud' }) {
   };
 
   if (mode === 'list') {
-    // 列表模式
+    // List mode
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
         {keywords.map((kw) => (
@@ -93,12 +93,12 @@ export default function KeywordCloud({ keywords = [], mode = 'cloud' }) {
                   className="tag tag-green"
                   style={{ fontSize: '0.65rem', padding: '2px 8px' }}
                 >
-                  AI采纳
+                  AI
                 </span>
               )}
             </div>
             <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-              {kw.count || 0} 篇
+              {kw.count || 0} articles
             </span>
           </Link>
         ))}
@@ -106,7 +106,7 @@ export default function KeywordCloud({ keywords = [], mode = 'cloud' }) {
     );
   }
 
-  // 云模式
+  // Cloud mode
   return (
     <div
       style={{

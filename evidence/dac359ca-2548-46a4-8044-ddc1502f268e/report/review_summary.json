@@ -1,16 +1,13 @@
 {
-  "task_id": "TASK-dac359ca",
-  "date": "2026-06-20",
-  "site": "TopcentralGEO.com (GO2)",
+  "article_slug": "go2-overseas-geo-site-content-review-system",
   "evidence_uuid": "dac359ca-2548-46a4-8044-ddc1502f268e",
-  "evidence_path": "/home/hermeswebui/workspace/jianfeng-geo/aigc/go2/evidence/dac359ca-2548-46a4-8044-ddc1502f268e",
-  "status": "证据包已创建，待内容生成与审核",
+  "status": "evidence_created_pending_review",
   "next_steps": [
-    "1. 爬虫Agent执行互联网检索并归档原始素材到citations/",
-    "2. 内容撰写Agent基于L1-L3来源撰写英文文章",
-    "3. 法务Agent审查（极限词、广告法、认证声明法律效力）",
-    "4. 审核质证Agent逐条核查每项数据声明",
-    "5. 溯源证据管理Agent确保证据链完整性",
-    "6. SUTLER终审后发布"
+    "1. Crawler Agent: Internet research and archive original materials to citations/",
+    "2. Content Writer Agent: Generate English articles based on L1-L3 sources",
+    "3. Legal Agent: Review (extreme words, advertising law, certification claims legal validity)",
+    "4. Verification Agent: Verify each data claim one by one",
+    "5. Evidence Management Agent: Ensure evidence chain integrity",
+    "6. SUTLER final review before publication"
   ]
 }

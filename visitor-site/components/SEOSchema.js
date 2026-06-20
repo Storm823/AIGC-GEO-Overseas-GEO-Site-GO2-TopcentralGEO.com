@@ -4,7 +4,7 @@ import Head from 'next/head';
 const defaultOrganization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Topcentral® GEO',
+  name: 'Topcentral GEO',
   alternateName: 'TopcentralGEO.com',
   url: 'https://www.TopcentralGEO.com',
   description: 'AIGC GEO (Generative Engine Optimization) platform helping businesses gain visibility across ChatGPT, Claude, Grok, Gemini, Perplexity, and DeepSeek.',
@@ -16,7 +16,7 @@ const defaultOrganization = {
 const defaultWebSite = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Topcentral® GEO - AIGC GEO Platform',
+  name: 'Topcentral GEO - AIGC GEO Platform',
   url: 'https://www.TopcentralGEO.com',
   description: 'Power your presence in the AI era with AIGC GEO — Generative Engine Optimization for all major AI engines.',
   potentialAction: {
@@ -39,86 +39,118 @@ export default function SEOSchema({
 }) {
   const schemas = [];
 
-  // 页面类型 Schema
-  if (type === 'WebPage' || type === 'AboutPage' || type === 'CollectionPage') {
-    const pageSchema = {
-      '@context': 'https://schema.org',
-      '@type': type,
-      name: title,
-      description: description,
-      url: url || 'https://itopcentral.vip',
-      ...(image && { image }),
-      ...(breadcrumb && {
-        breadcrumb: {
-          '@type': 'BreadcrumbList',
-          itemListElement: breadcrumb.map((item, i) => ({
-            '@type': 'ListItem',
-            position: i + 1,
-            name: item.name,
-            item: item.url,
-          })),
-        },
-      }),
-    };
-    schemas.push(pageSchema);
-  }
-
-  // 产品 Schema
-  if (product) {
-    const productSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'Product',
-      name: product.name,
-      description: product.description,
-      ...(product.brand && { brand: { '@type': 'Brand', name: product.brand } }),
-      ...(product.category && { category: product.category }),
-      ...(product.image && { image: product.image }),
-      ...(product.sku && { sku: product.sku }),
-      ...(product.mpn && { mpn: product.mpn }),
-    };
-    schemas.push(productSchema);
-  }
-
-  // 文章 Schema
-  if (article) {
-    const articleSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: article.title,
-      description: article.description,
-      ...(article.image && { image: article.image }),
-      ...(article.datePublished && { datePublished: article.datePublished }),
-      ...(article.dateModified && { dateModified: article.dateModified }),
-      ...(article.author && {
-        author: {
-          '@type': 'Person',
-          name: article.author,
-        },
-      }),
-    };
-    schemas.push(articleSchema);
-  }
-
-  // FAQ Schema
-  if (faq) {
-    const faqSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faq.map((item) => ({
-        '@type': 'Question',
-        name: item.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: item.answer,
-        },
-      })),
-    };
-    schemas.push(faqSchema);
-  }
-
-  // 始终包含组织+网站 Schema
+  // Always include Organization
   schemas.push(defaultOrganization);
-  schemas.push(defaultWebSite);
+
+  // Type-specific schema
+  switch (type) {
+    case 'WebSite':
+      schemas.push(defaultWebSite);
+      break;
+
+    case 'Article':
+      if (article) {
+        schemas.push({
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: article.headline || title,
+          description: description,
+          image: image,
+          datePublished: article.datePublished,
+          dateModified: article.dateModified,
+          author: {
+            '@type': 'Organization',
+            name: 'Topcentral GEO',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Topcentral GEO',
+          },
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': url,
+          },
+        });
+        
+        // Breadcrumb for Article
+        if (breadcrumb) {
+          schemas.push({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.TopcentralGEO.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Articles', item: 'https://www.TopcentralGEO.com/articles/' },
+              { '@type': 'ListItem', position: 3, name: title, item: url },
+            ],
+          });
+        }
+      }
+      break;
+
+    case 'Product':
+      if (product) {
+        schemas.push({
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: product.name,
+          description: product.description,
+          image: product.image,
+          brand: {
+            '@type': 'Brand',
+            name: 'Topcentral GEO',
+          },
+          offers: {
+            '@type': 'Offer',
+            price: product.price || '0',
+            priceCurrency: product.currency || 'USD',
+            availability: 'https://schema.org/InStock',
+          },
+        });
+      }
+      break;
+
+    case 'FAQPage':
+      if (faq && Array.isArray(faq)) {
+        schemas.push({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faq.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: item.answer,
+            },
+          })),
+        });
+      }
+      break;
+
+    default:
+      // WebPage schema is the default
+      schemas.push({
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: title || 'Topcentral GEO',
+        description: description || 'AIGC GEO platform for AI search visibility',
+        url: url || 'https://www.TopcentralGEO.com',
+      });
+      break;
+  }
+
+  // Breadcrumb (standalone, for non-article pages)
+  if (breadcrumb && type !== 'Article') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumb.map((item, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: item.name,
+        item: item.url,
+      })),
+    });
+  }
 
   return (
     <Head>
@@ -126,7 +158,9 @@ export default function SEOSchema({
         <script
           key={i}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema, null, 2),
+          }}
         />
       ))}
     </Head>

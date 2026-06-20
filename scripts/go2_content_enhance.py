@@ -156,7 +156,7 @@ def create_evidence_stubs():
                 "review_status": "HISTORICAL_UNVERIFIED",
                 "evidence_check": {"sources_json_exists": True, "total_sources": 0},
                 "claims_checked": [],
-                "final_decision": "待审核"
+                "final_decision": "pending_review"
             }
             with open(f"{ev_dir}/verification.json", "w") as f:
                 json.dump(verification, f, indent=2, ensure_ascii=False)

@@ -1,18 +1,18 @@
 /* =========================================
-   itopcentral.vip — Global Styles
-   坚锋® Topcentral 对外访问站
-   深色主题 · 工业科技感
+   TopcentralGEO.com — Global Styles
+   Topcentral GEO external-facing site
+   Dark theme · Industrial tech aesthetic
    ========================================= */
 
 :root {
-  /* 主色调 */
+  /* Primary colors */
   --bg-primary: #0a0e27;
   --bg-secondary: #111639;
   --bg-card: #161b42;
   --bg-elevated: #1c2260;
   --bg-hover: #242a6e;
 
-  /* 色彩 */
+  /* Accent colors */
   --accent-blue: #1a73e8;
   --accent-blue-light: #4a9eff;
   --accent-cyan: #64ffda;
@@ -21,35 +21,35 @@
   --accent-red: #ff5252;
   --accent-purple: #b388ff;
 
-  /* 文字 */
+  /* Text */
   --text-primary: #e8eaf6;
   --text-secondary: #9fa8da;
   --text-muted: #5c6bc0;
   --text-inverse: #0a0e27;
 
-  /* 边框 */
+  /* Borders */
   --border-color: rgba(100, 255, 218, 0.12);
   --border-cyan: rgba(100, 255, 218, 0.3);
   --border-blue: rgba(26, 115, 232, 0.3);
 
-  /* 阴影 */
+  /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 20px rgba(26, 115, 232, 0.15);
 
-  /* 圆角 */
+  /* Radius */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
   --radius-xl: 24px;
 
-  /* 字体 */
+  /* Fonts */
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Helvetica Neue',
     Helvetica, Arial, sans-serif;
   --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 
-  /* 尺寸 */
+  /* Sizing */
   --header-height: 68px;
   --max-width: 1200px;
 }
