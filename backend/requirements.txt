@@ -1,0 +1,14 @@
+fastapi==0.115.0
+uvicorn[standard]
+sqlalchemy[asyncio]==2.0.36
+asyncpg
+alembic
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+pydantic[email]==2.9.2
+pydantic-settings==2.5.2
+httpx
+redis
+aiofiles
+python-dotenv

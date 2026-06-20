@@ -1,0 +1,396 @@
+/* =========================================
+   itopcentral.vip — Global Styles
+   坚锋® Topcentral 对外访问站
+   深色主题 · 工业科技感
+   ========================================= */
+
+:root {
+  /* 主色调 */
+  --bg-primary: #0a0e27;
+  --bg-secondary: #111639;
+  --bg-card: #161b42;
+  --bg-elevated: #1c2260;
+  --bg-hover: #242a6e;
+
+  /* 色彩 */
+  --accent-blue: #1a73e8;
+  --accent-blue-light: #4a9eff;
+  --accent-cyan: #64ffda;
+  --accent-green: #00e676;
+  --accent-amber: #ffab00;
+  --accent-red: #ff5252;
+  --accent-purple: #b388ff;
+
+  /* 文字 */
+  --text-primary: #e8eaf6;
+  --text-secondary: #9fa8da;
+  --text-muted: #5c6bc0;
+  --text-inverse: #0a0e27;
+
+  /* 边框 */
+  --border-color: rgba(100, 255, 218, 0.12);
+  --border-cyan: rgba(100, 255, 218, 0.3);
+  --border-blue: rgba(26, 115, 232, 0.3);
+
+  /* 阴影 */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(26, 115, 232, 0.15);
+
+  /* 圆角 */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* 字体 */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Helvetica Neue',
+    Helvetica, Arial, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+
+  /* 尺寸 */
+  --header-height: 68px;
+  --max-width: 1200px;
+}
+
+/* =========================================
+   Reset & Base
+   ========================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-blue-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================
+   Form Elements Reset
+   ========================================= */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  color: inherit;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent-blue);
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+/* =========================================
+   Scrollbar
+   ========================================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-elevated);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
+/* =========================================
+   Typography
+   ========================================= */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+/* =========================================
+   Utility Classes
+   ========================================= */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-title h2 {
+  font-size: 2.25rem;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-title p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-light));
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(26, 115, 232, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--accent-cyan);
+  border: 1.5px solid var(--border-cyan);
+}
+
+.btn-outline:hover {
+  background: rgba(100, 255, 218, 0.08);
+  transform: translateY(-2px);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--border-cyan);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: rgba(26, 115, 232, 0.15);
+  color: var(--accent-blue-light);
+  border: 1px solid rgba(26, 115, 232, 0.25);
+}
+
+.tag-cyan {
+  background: rgba(100, 255, 218, 0.1);
+  color: var(--accent-cyan);
+  border-color: rgba(100, 255, 218, 0.2);
+}
+
+.tag-green {
+  background: rgba(0, 230, 118, 0.1);
+  color: var(--accent-green);
+  border-color: rgba(0, 230, 118, 0.2);
+}
+
+.tag-amber {
+  background: rgba(255, 171, 0, 0.1);
+  color: var(--accent-amber);
+  border-color: rgba(255, 171, 0, 0.2);
+}
+
+.tag-red {
+  background: rgba(255, 82, 82, 0.1);
+  color: var(--accent-red);
+  border-color: rgba(255, 82, 82, 0.2);
+}
+
+/* =========================================
+   Animation
+   ========================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* =========================================
+   Grid layouts
+   ========================================= */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .section { padding: 48px 0; }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  .section-title h2 { font-size: 1.6rem; }
+}
+
+/* Responsive Navigation */
+@media (max-width: 820px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-toggle {
+    display: flex !important;
+  }
+}
+
+/* =========================================
+   Page transition
+   ========================================= */
+.page-enter {
+  animation: fadeInUp 0.4s ease forwards;
+}

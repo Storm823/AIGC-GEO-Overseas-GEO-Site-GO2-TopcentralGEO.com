@@ -1,0 +1,174 @@
+# =============================================
+# docker-compose.yml
+# AIGC GEO Overseas Platform - Docker Orchestration
+# =============================================
+# Usage:
+#   Dev: docker compose -f docker/docker-compose.yml --env-file .env up -d
+#   Prod: docker compose -f docker/docker-compose.yml --env-file .env -f docker/docker-compose.prod.yml up -d
+# =============================================
+
+services:
+  # ==================== PostgreSQL Database ====================
+  postgres:
+    image: postgres:16-alpine
+    container_name: aigc-geo-overseas-postgres
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-aigc_geo_overseas}
+      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
+    ports:
+      - "127.0.0.1:5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-aigc_geo_overseas}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - aigc-geo-overseas-network
+
+  # ==================== Redis Cache ====================
+  redis:
+    image: redis:7-alpine
+    container_name: aigc-geo-overseas-redis
+    restart: unless-stopped
+    command: >
+      redis-server
+      --appendonly yes
+      --save 60 1000
+      --loglevel warning
+    volumes:
+      - redis_data:/data
+    ports:
+      - "127.0.0.1:6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - aigc-geo-overseas-network
+
+  # ==================== FastAPI Backend ====================
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/backend.Dockerfile
+    container_name: aigc-geo-overseas-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file:
+      - ../.env
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-aigc_geo_overseas}
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      # Dev: mount source for hot reload
+      # - ../backend:/app
+      - backend_static:/app/app/static
+    expose:
+      - "8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - aigc-geo-overseas-network
+
+  # ==================== React Admin Frontend ====================
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/frontend.Dockerfile
+      args:
+        REACT_APP_API_URL: /api/v1
+    container_name: aigc-geo-overseas-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    expose:
+      - "3000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    networks:
+      - aigc-geo-overseas-network
+
+  # ==================== Next.js Visitor Site (SSG) ====================
+  visitor-site:
+    build:
+      context: ..
+      dockerfile: docker/visitor-site.Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: /api/v1
+    container_name: aigc-geo-overseas-visitor-site
+    restart: unless-stopped
+    depends_on:
+      - backend
+    expose:
+      - "4000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    networks:
+      - aigc-geo-overseas-network
+
+  # ==================== Nginx Reverse Proxy ====================
+  nginx:
+    image: nginx:1.26-alpine
+    container_name: aigc-geo-overseas-nginx
+    restart: unless-stopped
+    ports:
+      - "${NGINX_PORT:-80}:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      # Static file mirror (for Nginx direct serving)
+      - backend_static:/usr/share/nginx/static:ro
+    environment:
+      NGINX_HOST: www.TopcentralGEO.com
+    depends_on:
+      backend:
+        condition: service_healthy
+      frontend:
+        condition: service_started
+      visitor-site:
+        condition: service_started
+    # Default nginx command (config already mounted correctly)
+    command: nginx -g "daemon off;"
+    networks:
+      - aigc-geo-overseas-network
+
+# ==================== Volumes ====================
+volumes:
+  postgres_data:
+    name: aigc-geo-overseas-postgres-data
+  redis_data:
+    name: aigc-geo-overseas-redis-data
+  backend_static:
+    name: aigc-geo-overseas-backend-static
+
+# ==================== Network ====================
+networks:
+  aigc-geo-overseas-network:
+    name: aigc-geo-overseas-network
+    driver: bridge

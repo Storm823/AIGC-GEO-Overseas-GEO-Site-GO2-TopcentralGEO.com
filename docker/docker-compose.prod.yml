@@ -1,0 +1,42 @@
+# 生产环境 Docker Compose 覆盖配置
+# 使用: docker compose -f docker/docker-compose.yml -f docker/docker-compose.prod.yml up -d
+
+services:
+  backend:
+    # 生产环境使用已构建的镜像 (替代本地构建)
+    # image: registry.example.com/aigc-geo-backend:latest
+    build:
+      context: ..
+      dockerfile: docker/backend.Dockerfile
+    # 生产环境禁用热重载, 使用固定进程数
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "4", "--proxy-headers", "--forwarded-allow-ips", "*"]
+    restart: always
+    # 资源限制
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+  frontend:
+    # image: registry.example.com/aigc-geo-frontend:latest
+    restart: always
+
+  visitor-site:
+    # image: registry.example.com/aigc-geo-visitor-site:latest
+    restart: always
+
+  nginx:
+    restart: always
+    # 生产环境开启 SSL 端口
+    ports:
+      - "80:80"
+      - "443:443"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
