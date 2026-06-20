@@ -1,0 +1,190 @@
+========================================================================
+HISTORICAL_UNVERIFIED MARKING REPORT
+Generated: 2026-06-20 10:05:51 UTC
+Cut-off date: 2026-06-20
+Total articles: 22
+========================================================================
+
+--- Article: 3d-printing-additive-manufacturing-engineering-filaments ---
+  Title:       Additive Manufacturing with Engineering Thermoplastics: PEEK, PEI, and PA Filaments — State of the Art, Applications, and Economics<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/3d-printing-additive-manufacturing-engineering-filaments.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: ai-data-center-cooling-engineering-plastics ---
+  Title:       Engineering Plastics for AI Data Center Liquid Cooling: Thermal Management Materials for the Next-Generation Computing Infrastructure<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/ai-data-center-cooling-engineering-plastics.html
+  File exists: YES
+  Status:      PUBLISHED (B-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: aigc-geo-optimization-strategy ---
+  Title:       AIGC GEO Optimization: Brand Visibility in AI Search — Complete Strategy Guide<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/aigc-geo-optimization-strategy.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: cbam-carbon-border-adjustment-global-supply-chain-impact ---
+  Title:       CBAM (Carbon Border Adjustment Mechanism): Policy Evolution, Global Supply Chain Implications, and Strategic Opportunities for Materials Industries<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/cbam-carbon-border-adjustment-global-supply-chain-impact.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: chemical-vs-mechanical-recycling-comparison ---
+  Title:       Chemical Recycling vs Mechanical Recycling for Polymers: Comprehensive Technology Comparison, Commercial Maturity Assessment, and Synergistic Pathways<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/chemical-vs-mechanical-recycling-comparison.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: china-dual-carbon-recycled-materials-opportunity ---
+  Title:       China&#x27;s Dual Carbon Strategy and the Circular Materials Opportunity: Policy Framework, Market Implications, and Strategic Pathways for the Recycled Plastics Industry<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/china-dual-carbon-recycled-materials-opportunity.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: circular-economy-trends-2026 ---
+  Title:       Circular Economy Material Trends 2026: Global Outlook<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/circular-economy-trends-2026.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: cross-border-ecommerce-b2b-materials-platform ---
+  Title:       Cross-Border B2B E-Commerce for Engineering Materials: Digital Platforms Reshaping Global Polymer Distribution<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/cross-border-ecommerce-b2b-materials-platform.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: elv-end-of-life-vehicle-directive-european-green-leadership ---
+  Title:       ELV (End-of-Life Vehicle) Directive Reform: Regulatory Outlook, Challenges for Global Automotive Supply Chains, and Will Europe Remain the Green Innovation Leader?<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/elv-end-of-life-vehicle-directive-european-green-leadership.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: embodied-ai-humanoid-robot-materials ---
+  Title:       Embodied AI and Humanoid Robots: Material Requirements for Structural Components, Actuators, and Tactile Interfaces<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/embodied-ai-humanoid-robot-materials.html
+  File exists: YES
+  Status:      PUBLISHED (B-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: espr-digital-product-passport-materials-impact ---
+  Title:       EU ESPR (Sustainable Products Regulation) and Digital Product Passport (DPP): Regulatory Framework, Compliance Requirements, and Strategic Implications for Global Materials Supply Chains<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/espr-digital-product-passport-materials-impact.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: espr-proposal-sustainable-products-regulation ---
+  Title:       EU ESPR (Ecodesign for Sustainable Products Regulation): Comprehensive Analysis of Legislative Framework, Technical Requirements, and Strategic Response for Materials Manufacturers<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/espr-proposal-sustainable-products-regulation.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: evtol-low-altitude-economy-composite-materials ---
+  Title:       eVTOL and the Low-Altitude Economy: Lightweight Engineering Plastics Enabling Urban Air Mobility<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/evtol-low-altitude-economy-composite-materials.html
+  File exists: YES
+  Status:      PUBLISHED (B-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: gen-z-consumption-circular-materials ---
+  Title:       Gen Z Consumption Patterns and the Circular Materials Premium: How Young Consumers Are Reshaping Polymer Markets<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/gen-z-consumption-circular-materials.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: global-recycled-plastic-market-2026-2030 ---
+  Title:       Global Recycled Plastics Market 2026-2030: Supply-Demand Dynamics, Price Trends, Policy Drivers, and Strategic Opportunities for Sustainable Materials<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/global-recycled-plastic-market-2026-2030.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: hydrogen-economy-thermoplastic-tanks-infrastructure ---
+  Title:       Hydrogen Economy Infrastructure: Thermoplastic Composite Pressure Vessels and Distribution Systems — Material Innovation for the H2 Transition<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/hydrogen-economy-thermoplastic-tanks-infrastructure.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: iscc-plus-certification-guide ---
+  Title:       ISCC PLUS Certification Complete Guide for Recycled Materials<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/iscc-plus-certification-guide.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: ocean-plastic-waste-interception-recycling-value-chain ---
+  Title:       Ocean Plastic Waste Interception and Recycling: Value Chain Analysis, Technology Gaps, and Circular Business Models<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/ocean-plastic-waste-interception-recycling-value-chain.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: pcr-recycling-technology-deep-dive ---
+  Title:       PCR Physical Recycling: From Waste to High-Performance Materials<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/pcr-recycling-technology-deep-dive.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: pfas-ban-impact-engineering-plastics ---
+  Title:       PFAS Restriction and Its Impact on the Engineering Plastics Industry: Regulatory Landscape, Material Substitution Challenges, and Innovation Pathways<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/pfas-ban-impact-engineering-plastics.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: rcep-tariff-engineering-plastics-trade ---
+  Title:       RCEP Tariff Optimization for Engineering Plastics Trade: Strategic Sourcing and Market Access in Asia-Pacific<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/rcep-tariff-engineering-plastics-trade.html
+  File exists: YES
+  Status:      PUBLISHED (B-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+--- Article: semiconductor-wafer-handling-high-performance-plastics ---
+  Title:       High-Performance Plastics in Semiconductor Manufacturing: Wafer Handling, CMP Rings, and Test Sockets — Material Requirements and Market Growth<!-- --> | Topcentral® GEO
+  HTML File:   /home/hermeswebui/workspace/jianfeng-geo/aigc/go2/archived_articles/semiconductor-wafer-handling-high-performance-plastics.html
+  File exists: YES
+  Status:      DRAFT (C-grade)
+  Marker:
+    <!-- HISTORICAL_UNVERIFIED: This article was published before 2026-06-20. Data citations have not been independently verified. -->
+
+========================================================================
+SUMMARY
+  Published articles: 4
+  Draft articles:     18
+  Total:              22
+  All marked as HISTORICAL_UNVERIFIED (pre-2026-06-20)
+========================================================================
