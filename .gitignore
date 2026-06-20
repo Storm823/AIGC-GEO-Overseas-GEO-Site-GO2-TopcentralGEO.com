@@ -4,3 +4,9 @@ out/
 *.log
 .env
 *.bak
+# Evidence archived files
+evidence/*/citations/*
+evidence/*/retrieval/*
+!evidence/*/sources.json
+!evidence/*/verification.json
+!evidence/*/report/*

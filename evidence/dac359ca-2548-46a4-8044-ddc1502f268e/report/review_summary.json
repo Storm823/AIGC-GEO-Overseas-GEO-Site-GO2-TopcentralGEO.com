@@ -1,0 +1,16 @@
+{
+  "task_id": "TASK-dac359ca",
+  "date": "2026-06-20",
+  "site": "TopcentralGEO.com (GO2)",
+  "evidence_uuid": "dac359ca-2548-46a4-8044-ddc1502f268e",
+  "evidence_path": "/home/hermeswebui/workspace/jianfeng-geo/aigc/go2/evidence/dac359ca-2548-46a4-8044-ddc1502f268e",
+  "status": "证据包已创建，待内容生成与审核",
+  "next_steps": [
+    "1. 爬虫Agent执行互联网检索并归档原始素材到citations/",
+    "2. 内容撰写Agent基于L1-L3来源撰写英文文章",
+    "3. 法务Agent审查（极限词、广告法、认证声明法律效力）",
+    "4. 审核质证Agent逐条核查每项数据声明",
+    "5. 溯源证据管理Agent确保证据链完整性",
+    "6. SUTLER终审后发布"
+  ]
+}
